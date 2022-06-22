@@ -1,0 +1,79 @@
+main {
+  display: flex;
+}
+
+.bullets {
+  width: 13vw;
+  background: #fff;
+  border-radius: 20px;
+  padding: 3vw 2vw;
+  font-size: 0.8vw;
+  text-align: center;
+  line-height: 1.5vw;
+  margin-right: 2vw;
+  &__shadow {
+    height: 3vh;
+    background: url(./assets/img/menu_shadow.svg);
+    background-repeat: no-repeat;
+  }
+}
+
+.text {
+  width: 40vw;
+  padding: 3vw 2vw;
+  &__start {
+    width: 25vw;
+    font-size: 2vw;
+    line-height: 3vw;
+    text-align: justify;
+  }
+  &__install {
+    display: flex;
+    align-items: center;
+    margin: 1vw 0;
+    & p {
+      font-size: 1.5vw;
+    }
+    & div {
+      width: 4vw;
+      margin-right: .1vw;
+    }
+  }
+  &__buttons {
+    display: flex;
+    margin: 2vw 0;
+  }
+  &__button {   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: .7vw 2.5vw;
+    border-radius: 500px;
+    margin: 0 .3vw;
+    & p {
+      font-size: .9vw;
+      margin-right: 1vw;
+      color: #fff;
+    }
+    &:nth-child(1) {
+      background-color: #12c868;
+    }
+     &:nth-child(2) {
+      background-color: #F38120;
+    }
+    & img {
+        width: 10%;
+    }
+  }
+  &__bottom {
+    display: flex;
+    align-items: flex-start;
+    & p {
+      text-align: center;
+      width: 17vw;
+      font-size: 1vw;
+      line-height: 1.5vw;
+      margin-left: 1vw;
+    }
+  }
+}

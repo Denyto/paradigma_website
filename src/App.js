@@ -1,13 +1,20 @@
-import logo from './assets/img/logo.svg';
-import './App.css';
+import Header from './components/header';
+import Main from './components/main';
+
+
+
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />       
-      </header>
-    </div>
+    <>
+      <div className="App">
+        <div className="wrapper">
+          <Header></Header>
+          <Main></Main>
+        </div>
+      </div>
+    </>
   );
 }
 
