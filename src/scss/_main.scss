@@ -50,6 +50,7 @@ main {
     padding: .7vw 2.5vw;
     border-radius: 500px;
     margin: 0 .3vw;
+    transition: all .3s;
     & p {
       font-size: .9vw;
       margin-right: 1vw;
@@ -62,7 +63,11 @@ main {
       background-color: #F38120;
     }
     & img {
-        width: 10%;
+        width: 1.5vw;
+    }
+    &:hover {
+      cursor: pointer;
+      transform: scale(105%);
     }
   }
   &__bottom {
@@ -74,6 +79,11 @@ main {
       font-size: 1vw;
       line-height: 1.5vw;
       margin-left: 1vw;
+    }
+    & img {
+      &:hover {
+        cursor: pointer;
+      }
     }
   }
 }
