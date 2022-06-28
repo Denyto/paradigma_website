@@ -36,6 +36,15 @@ body {
     background-attachment: fixed;
     z-index: -10;
   }
+  @include media-mobile {
+    // background: url(./assets/img/BG.png), #edf2f5;
+    background-image: url(./assets/img/mobileBG.svg);
+    background-size: 100vw 110vh;
+    background-repeat: no-repeat;
+    background-blend-mode: multiply;
+    background-attachment: fixed;
+    z-index: -10;
+  }
 }
 
 .wrapper {

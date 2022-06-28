@@ -31,6 +31,16 @@ body {
     z-index: -10;
   }
 }
+@media (max-width: 495px) {
+  .App {
+    background-image: url(./assets/img/mobileBG.svg);
+    background-size: 100vw 110vh;
+    background-repeat: no-repeat;
+    background-blend-mode: multiply;
+    background-attachment: fixed;
+    z-index: -10;
+  }
+}
 
 .wrapper {
   width: 80vw;
@@ -107,7 +117,7 @@ body {
 }
 @media (max-width: 992px) {
   .header__menu {
-    height: 100vmax;
+    height: 95vmax;
     position: absolute;
     left: 0;
     top: 6.5rem;
