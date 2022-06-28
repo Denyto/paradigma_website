@@ -46,7 +46,7 @@ function Modal({ callCloseModal }) {
             />
             <button
               className={classNames('modal__button', { dis: !isRight || !isFull })}
-              disabled={!isRight}
+              disabled={!isRight || !isFull}
               onClick={() => {
                 sendForm(document.querySelector('input').value);
                 setIsSend(true);
@@ -69,7 +69,9 @@ function Modal({ callCloseModal }) {
               </div>
             </div>
           </>
-        ) : (<div className='modal__send'>отправлено</div>)}
+        ) : (
+          <div className="modal__send">отправлено</div>
+        )}
       </form>
     </div>
   );
