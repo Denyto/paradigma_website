@@ -1,0 +1,92 @@
+.hamburger-line {
+  content: '';
+  position: absolute;
+  display: inline-block;
+  width: 100%;
+  height: 3px;
+  background: rgb(29, 70, 104);
+  border-radius: 5px;
+}
+
+.hamburger {
+  transition: 0.4s;
+  display: none;
+  position: relative;
+  top: 1rem;
+  width: 3rem;
+  height: 15px;
+  z-index: 5;
+  @include media-laptop {
+    display: inline-block;
+  }
+  &:before {
+    transition: 0.5s;
+    content: '';
+    position: absolute;
+    display: inline-block;
+    width: 100%;
+    height: 3px;
+    background: rgb(29, 70, 104);
+    border-radius: 5px;
+    top: -1px;
+    left: 0;
+  }
+  &:after {
+    transition: 0.5s;
+    content: '';
+    position: absolute;
+    display: inline-block;
+    width: 100%;
+    height: 3px;
+    background: rgb(29, 70, 104);
+    border-radius: 5px;
+    bottom: -1px;
+    left: 0;
+  }
+}
+.rotate {
+  &:before {
+    transition: 0.5s;
+    content: '';
+    position: absolute;
+    display: inline-block;
+    width: 100%;
+    height: 3px;
+    background: rgb(29, 70, 104);
+    border-radius: 5px;
+    top: 6px;
+    left: 0;
+    transform: rotate(-315deg);
+  }
+  &:after {
+    transition: 0.5s;
+    content: '';
+    position: absolute;
+    display: inline-block;
+    width: 100%;
+    height: 3px;
+    background: rgb(29, 70, 104);
+    border-radius: 5px;
+    bottom: 6px;
+    left: 0;
+    transform: rotate(495deg);
+  }
+  .hamburger-line {
+    opacity: 0;
+  }
+}
+.hamburger:hover {
+  cursor: pointer;
+}
+
+.hamburger-line {
+  content: '';
+  position: absolute;
+  display: inline-block;
+  width: 100%;
+  height: 3px;
+  background: rgb(29, 70, 104);
+  border-radius: 5px;
+  top: calc(50% - 1.5px);
+  left: 0;
+}

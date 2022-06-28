@@ -3,7 +3,6 @@
     width: 100%;
     display: flex;
     padding: 1.5vw 0 1vw 0;
-
     & ul {
       width: 100%;
       display: flex;
@@ -19,18 +18,59 @@
           cursor: pointer;
           user-select: none;
         }
+        @include media-laptop {
+          margin: 0.5rem 0;
+          font-size: 1.5rem;
+          &.header__menu__mobile {
+            margin: 2rem 0 0 0;
+          }
+        }
       }
-      @include media-laptop {        
-        width: 20rem;
+      @include media-laptop {
+        width: 100vw;
         flex-direction: column;
-     }
+        justify-content: flex-start;
+        align-items: center;
+      }
     }
     & img {
       width: 1.5vw;
+      @include media-laptop {
+        width: 2rem;
+      }
     }
-     @include media-laptop {
-        transform: translateX(90rem);        
-     }
+    &__mobile {
+      display: none;
+      @include media-laptop {
+        width: 20rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        & p {
+          font-size: 1.1rem;
+          text-align: center;
+        }
+      }
+    }
+    @include media-laptop {
+      height: 100vh;
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 6.5rem;
+      padding: 1.5vw 0 1vw 1rem;
+      background-color: #e0e8ed;
+      // background-image: url(./assets/img/mobileMenuBG.svg), #e0e8ed;
+      transition: all 0.5s;
+      transform: translateX(-100rem);
+    }
+    // @include media-mobile {
+    //   top: 6.5rem;
+    // }
+    &.visible {
+      transform: translateX(0rem);
+      z-index: 5;
+    }
   }
   &__top {
     display: flex;
@@ -58,6 +98,10 @@
         & img {
           width: 70%;
         }
+        @include media-laptop {
+          width: 3rem;
+          height: 3rem;
+        }
       }
       &:nth-child(1) {
         display: block;
@@ -66,9 +110,9 @@
           line-height: 1.4vw;
           margin: 1vw 0;
         }
-        @include media-laptop {        
-        display: none;
-     }
+        @include media-laptop {
+          display: none;
+        }
       }
       &:nth-child(2) {
         & p {
@@ -78,9 +122,9 @@
             cursor: pointer;
           }
         }
-         @include media-laptop {        
-        display: none;
-     }
+        @include media-laptop {
+          display: none;
+        }
       }
 
       &:nth-child(3) {
@@ -93,20 +137,34 @@
           position: absolute;
           top: 0;
           width: 12vw;
+          @include media-laptop {
+            width: 11rem;
+          }
+          @include media-mobile {
+            width: 7rem;
+          }
         }
-         @include media-laptop {        
-        display: none;
-     }
+        @include media-laptop {
+          background-size: 20rem;
+          background-blend-mode: unset;
+        }
+        @include media-mobile {
+          width: 9rem;
+          height: 5rem;
+          background-size: 11rem;
+          background-blend-mode: unset;
+        }
       }
       &:nth-child(4) {
         display: flex;
         flex-direction: column;
-         @include media-laptop {        
-        display: none;
-     }
+        @include media-laptop {
+          display: none;
+        }
       }
       &:nth-child(5) {
         flex-direction: column;
+        width: 21%;
         & p {
           margin: 0.2vw 0;
 
@@ -119,6 +177,12 @@
         }
         & b {
           font-size: 1.5vw;
+          @include media-laptop {
+            font-size: 1.8rem;
+          }
+        }
+        @include media-laptop {
+          width: 19rem;
         }
       }
       &__point {
@@ -133,6 +197,11 @@
           text-decoration: underline 0.2vw;
           cursor: pointer;
         }
+      }
+      @include media-laptop {
+        font-size: 1rem;
+        width: 19rem;
+        height: 6rem;
       }
     }
     &__flex {
@@ -158,8 +227,19 @@
         }
         & img {
           width: 100%;
+          @include media-laptop {
+            width: 1.8rem;
+          }
+        }
+        @include media-laptop {
+          width: 3rem;
+          height: 3rem;
         }
       }
+    }
+    @include media-laptop {
+      justify-content: space-evenly;
+      padding: 0 0;
     }
   }
 }
