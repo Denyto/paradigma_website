@@ -22,7 +22,7 @@
           margin: 0.5rem 0;
           font-size: 1.5rem;
           &.header__menu__mobile {
-            margin: 2rem 0 0 0;
+            margin: 3rem 0 0 0;
           }
         }
       }
@@ -40,20 +40,21 @@
       }
     }
     &__mobile {
-      display: none;
+      display: none;     
       @include media-laptop {
         width: 20rem;
         display: flex;
         flex-direction: column;
         align-items: center;
         & p {
+          margin: 1rem 0 0 0;
           font-size: 1.1rem;
           text-align: center;
         }
-      }
+      }      
     }
     @include media-laptop {
-      height: 95vmax;
+      height: 103vmax;
       position: absolute;
       left: 0;
       top: 6.5rem;
@@ -198,7 +199,7 @@
         }
       }
       @include media-laptop {
-        font-size: 1rem;
+        font-size: 0.9rem;
         width: 19rem;
         height: 6rem;
       }

@@ -1,8 +1,17 @@
+import { useState } from 'react';
+import classNames from 'classnames';
 import circles from '../assets/img/circles.svg';
 import arrow from '../assets/img/arrow.svg';
 import icon from '../assets/img/icon.svg';
+import button from '../assets/img/buttonMobile.svg';
 
 function Main() {
+  const [isUp, setIsUp] = useState(false);
+
+  function bulletsUp() {
+    setIsUp(!isUp);
+  }
+
   return (
     <main>
       <section className="bullets">
@@ -63,6 +72,9 @@ function Main() {
             экономию нашего времени
           </p>
         </div>
+      </section>
+      <section className={classNames('bullets__mobile', { up: isUp })}>
+        <img className="pulse" onClick={bulletsUp} src={button} alt="button" />
       </section>
     </main>
   );

@@ -27,19 +27,21 @@ body {
     background-size: 100vw 100vh;
     background-repeat: no-repeat;
     background-blend-mode: multiply;
-    background-attachment: fixed;
     z-index: -10;
   }
 }
 @media (max-width: 495px) {
   .App {
     background-image: url(./assets/img/mobileBG.svg);
-    background-size: 100vw 110vh;
+    background-size: 105vw 105vh;
     background-repeat: no-repeat;
     background-blend-mode: multiply;
-    background-attachment: fixed;
     z-index: -10;
   }
+}
+
+.opacity {
+  background: rgba(240, 240, 240, 0.1);
 }
 
 .wrapper {
@@ -50,9 +52,50 @@ body {
 @media (max-width: 992px) {
   .wrapper {
     width: 90vw;
+    overflow: hidden;
   }
 }
 
+.pulse {
+  position: absolute;
+  top: -7rem;
+  margin: 100px;
+  display: block;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  background: #cca92c;
+  cursor: pointer;
+  box-shadow: 0 0 0 #cca92c;
+  animation: pulse 2s infinite;
+  right: -8.5rem;
+}
+
+@-webkit-keyframes pulse {
+  0% {
+    -webkit-box-shadow: 0 0 0 0 #cca92c;
+  }
+  70% {
+    -webkit-box-shadow: 0 0 0 10px rgba(204, 169, 44, 0);
+  }
+  100% {
+    -webkit-box-shadow: 0 0 0 0 rgba(204, 169, 44, 0);
+  }
+}
+@keyframes pulse {
+  0% {
+    -moz-box-shadow: 0 0 0 0 #cca92c;
+    box-shadow: 0 0 0 0 #cca92c;
+  }
+  70% {
+    -moz-box-shadow: 0 0 0 10px rgba(204, 169, 44, 0);
+    box-shadow: 0 0 0 10px rgba(204, 169, 44, 0);
+  }
+  100% {
+    -moz-box-shadow: 0 0 0 0 rgba(204, 169, 44, 0);
+    box-shadow: 0 0 0 0 rgba(204, 169, 44, 0);
+  }
+}
 .header__menu {
   width: 100%;
   display: flex;
@@ -81,7 +124,7 @@ body {
     font-size: 1.5rem;
   }
   .header__menu ul li.header__menu__mobile {
-    margin: 2rem 0 0 0;
+    margin: 3rem 0 0 0;
   }
 }
 @media (max-width: 992px) {
@@ -111,13 +154,14 @@ body {
     align-items: center;
   }
   .header__menu__mobile p {
+    margin: 1rem 0 0 0;
     font-size: 1.1rem;
     text-align: center;
   }
 }
 @media (max-width: 992px) {
   .header__menu {
-    height: 95vmax;
+    height: 103vmax;
     position: absolute;
     left: 0;
     top: 6.5rem;
@@ -276,7 +320,7 @@ body {
 }
 @media (max-width: 992px) {
   .header__top__item {
-    font-size: 1rem;
+    font-size: 0.9rem;
     width: 19rem;
     height: 6rem;
   }
@@ -338,6 +382,13 @@ main {
 @media (max-width: 992px) {
   main {
     justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+@media (max-width: 495px) {
+  main {
+    position: relative;
   }
 }
 
@@ -357,9 +408,35 @@ main {
   background-repeat: no-repeat;
 }
 @media (max-width: 992px) {
+  .bullets__shadow {
+    height: 4vh;
+  }
+}
+@media (max-width: 992px) {
   .bullets {
     display: none;
   }
+}
+.bullets__mobile {
+  display: none;
+  transition: all 1s;
+}
+@media (max-width: 495px) {
+  .bullets__mobile {
+    position: absolute;
+    display: block;
+    top: 43rem;
+    width: 23rem;
+    height: 38rem;
+    background: url(./assets/img/bulletsMobile.svg);
+    background-repeat: no-repeat;
+  }
+}
+.bullets__mobile.up {
+  transform: translateY(-51vh);
+}
+.bullets__mobile.up .pulse {
+  animation: none;
 }
 
 .text {
@@ -486,7 +563,7 @@ main {
   .text__bottom p {
     width: 16rem;
     font-size: 1.3rem;
-    line-height: 1.5rem;
+    line-height: 1.7rem;
   }
 }
 @media (max-width: 495px) {
@@ -496,6 +573,11 @@ main {
 }
 .text__bottom img:hover {
   cursor: pointer;
+}
+@media (max-width: 495px) {
+  .text__bottom {
+    display: none;
+  }
 }
 @media (max-width: 992px) {
   .text {
@@ -526,6 +608,7 @@ main {
   justify-content: space-evenly;
   font-size: 0.9vw;
   width: 30vw;
+  height: 40vw;
   background-color: #fff;
   background-repeat: no-repeat;
   background-size: cover;
@@ -548,6 +631,7 @@ main {
 @media (max-width: 992px) {
   .modal__content {
     width: 27rem;
+    height: 35rem;
     font-size: 1rem;
     padding: 3rem 5rem;
   }
@@ -556,6 +640,7 @@ main {
   .modal__content {
     top: 20vw;
     width: 25rem;
+    height: 33rem;
   }
 }
 .modal__button,
@@ -644,6 +729,10 @@ main {
   .modal__check {
     width: 20rem;
   }
+}
+.modal__send {
+  font-size: 2rem;
+  color: #4ec200;
 }
 
 .hamburger-line {

@@ -17,6 +17,7 @@
     justify-content: space-evenly;
     font-size: 0.9vw;
     width: 30vw;
+    height: 40vw;
     // background: url(./assets/img/formBG.svg);
     background-color: #fff;
     background-repeat: no-repeat;
@@ -36,12 +37,14 @@
     }
     @include media-laptop {
       width: 27rem;
+      height: 35rem;
       font-size: 1rem;
       padding: 3rem 5rem;
     }
     @include media-mobile {
       top: 20vw;
       width: 25rem;
+      height: 33rem;
     }
   }
   &__button,
@@ -114,5 +117,9 @@
     @include media-laptop {
         width: 20rem;
       }
+  }
+  &__send {
+    font-size: 2rem;
+    color: #4ec200;
   }
 }

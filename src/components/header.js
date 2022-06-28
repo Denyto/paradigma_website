@@ -13,13 +13,12 @@ function Header() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  function bbb(e) {
+  function submit(e) {
     setIsModalOpen(true);
   }
 
   function toggleMenu() {
     if (getComputedStyle(document.querySelector('.hamburger')).display === 'block') {
-      console.log(getComputedStyle(document.querySelector('.hamburger')).display);
       setIsMenuOpen(!isMenuOpen);
     }
   }
@@ -119,7 +118,7 @@ function Header() {
           <a href="tel:8(800)222-54-60" target="blank">
             <b>8 (800) 222-54-60</b>
           </a>
-          <p onClick={bbb}>Позвоните мне</p>
+          <p onClick={submit}>Позвоните мне</p>
         </div>
         <span onClick={toggleMenu} className={classNames('hamburger', { rotate: isMenuOpen })}>
           <span className="hamburger-line"></span>

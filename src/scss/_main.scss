@@ -2,6 +2,11 @@ main {
   display: flex;
   @include media-laptop {
     justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+  @include media-mobile {
+    position: relative;
   }
 }
 
@@ -18,9 +23,31 @@ main {
     height: 3vh;
     background: url(./assets/img/menu_shadow.svg);
     background-repeat: no-repeat;
+    @include media-laptop {
+      height: 4vh;
+    }
   }
   @include media-laptop {
     display: none;
+  }
+  &__mobile {
+    display: none;
+    transition: all 1s;
+    @include media-mobile {
+      position: absolute;
+      display: block;
+      top: 43rem;
+      width: 23rem;
+      height: 38rem;
+      background: url(./assets/img/bulletsMobile.svg);
+      background-repeat: no-repeat;
+    }
+    &.up {
+      transform: translateY(-51vh);
+      .pulse {
+        animation: none;
+      }
+    }
   }
 }
 
@@ -128,18 +155,19 @@ main {
       @include media-laptop {
         width: 16rem;
         font-size: 1.3rem;
-        line-height: 1.5rem;
+        line-height: 1.7rem;
       }
       @include media-mobile {
-
         font-size: 1.2rem;
-
       }
     }
     & img {
       &:hover {
         cursor: pointer;
       }
+    }
+    @include media-mobile {
+      display: none;
     }
   }
   @include media-laptop {

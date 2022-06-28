@@ -6,9 +6,11 @@ function App() {
   return (
     <>
       <div className="App">
-        <div className="wrapper">
-          <Header></Header>
-          <Main></Main>
+        <div className="opacity">
+          <div className="wrapper">
+            <Header></Header>
+            <Main></Main>
+          </div>
         </div>
       </div>
     </>
