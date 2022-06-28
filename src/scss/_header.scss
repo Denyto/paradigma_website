@@ -53,10 +53,9 @@
       }
     }
     @include media-laptop {
-      height: 100vh;
+      height: 100vmax;
       position: absolute;
       left: 0;
-      right: 0;
       top: 6.5rem;
       padding: 1.5vw 0 1vw 1rem;
       background-color: #e0e8ed;
