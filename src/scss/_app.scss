@@ -66,21 +66,22 @@ body {
 
 .pulse {
     position: absolute;
-    top: -7rem;
+    top: -6.5rem;
     margin: 100px;
     display: block;
-    width: 4rem;
-    height: 4rem;
+    width: 2.5rem;
+    height: 2.5rem;
     border-radius: 50%;
     background: #cca92c;
     cursor: pointer;
     box-shadow: 0 0 0 rgb(204 169 44 / 140%);
-    animation: pulse 2s infinite;
-    right: -8.5rem;
+    animation: pulse 1.5s infinite;
+    right: -7.7rem;
+    transform: rotate(45deg);
+    transition: all 1s;
 }
-// .pulse:hover {
-//   animation: none;
-// }
+
+
 
 @-webkit-keyframes pulse {
   0% {
